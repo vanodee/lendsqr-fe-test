@@ -38,7 +38,7 @@ export default function LoginPage() {
 
           <p className="loginFont-xs-semibold color-secondary-100">FORGOT PASSWORD ?</p>
 
-          <button className="loginFont-base-semibold" disabled={isLoading}>
+          <button className="btn-secondary-filled loginFont-base-semibold" disabled={isLoading}>
             {!isLoading ? "LOG IN" : "Please Wait..."}
           </button>
 

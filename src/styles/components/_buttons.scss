@@ -1,0 +1,75 @@
+@use '../_index' as ui;
+@use 'sass:map';
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// BUTTON VARIANTS
+// ----------------------------------------------------------------------------------------------------------------------------
+
+$buttonVariants: (
+  "filled": (
+    "background": true,
+    "border": false,
+    "text": true
+  ),
+  "outlined": (
+    "background": false,
+    "border": true,
+    "text": true
+  ),
+  "text": (
+    "background": false,
+    "border": false,
+    "text": true
+  )
+);
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// BUTTON UTILITY CLASSES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+@each $color-name, $color-value in ui.$colors {
+  @each $variant-name, $variant-options in $buttonVariants {
+    .btn-#{$color-name}-#{$variant-name} {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      // Text Color
+      @if map.get($variant-options, "text") {
+        color: if($variant-name == "filled", white, $color-value);
+      }
+
+      // Background Color
+      @if map.get($variant-options, "background") {
+        background-color: $color-value;
+      } @else {
+        background-color: transparent;
+      }
+
+      // Border
+      @if map.get($variant-options, "border") {
+        border: 2px solid $color-value;
+      } @else {
+        border: none;
+      }
+
+      // Hover Styles
+      &:hover {
+        opacity: 0.7;
+      }
+
+      // Disabled State
+      &.disabled,
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.2;
+        pointer-events: none;
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}
