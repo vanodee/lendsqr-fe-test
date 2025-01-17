@@ -31,7 +31,7 @@ export default function LoginPage() {
       // Validate Login Credentials by comparing to Demo Login Credentials
       if (email === demoLogin.email && password === demoLogin.password) {
         setErrorMessage("");
-        localStorage.setItem("isAuthenticated", "true");          // Store authentication status
+        localStorage.setItem("isAuthenticated", "true");          // Set authentication status to TRUE
         window.location.reload();                                 // Reload the page, so react-router handles redirecting with new authentication status (see App.tsx)
       } 
       else {

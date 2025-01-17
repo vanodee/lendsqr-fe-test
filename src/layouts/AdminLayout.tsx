@@ -3,6 +3,7 @@ import Logo from '../assets/lendsqr_logo.png';
 import NotificationIcon from "../assets/icons/notification.svg?react";
 import Profile from '../components/Profile'
 import SearchBar from "../components/SearchBar";
+import NavList from "../components/NavList";
 
 
 export default function AdminLayout() {
@@ -22,7 +23,7 @@ export default function AdminLayout() {
       </div>
 
       <div className="admin-nav">
-        Navbar
+        <NavList />
       </div>
             
       <div className="admin-contentArea">
