@@ -40,23 +40,57 @@
         flex-direction: column;
         gap: 1.5rem;
 
-        input {
-            color: ui.get-color(accent, 100);
-            border-radius: 5px;
-            padding: 0.75rem 1rem;
+        div {
+            margin-bottom: 5%;
 
-            &::placeholder {
-                color: ui.get-color(accent, 60)
+            h1 {
+                @include ui.font-style(loginFont, xl, bold);
+                color: ui.get-color(primary, 100);
             }
-            
-            &:focus {
-                outline: none;
-                border: 2px solid ui.get-color(secondary, 60);
-            }
+
+            h2 {
+                @include ui.font-style(loginFont, md, normal);
+                color: ui.get-color(accent, 100);
+            } 
         }
 
         button {
             margin-top: 3%;
         }
     }
+}
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// FORM INPUT FIELD STYLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+@mixin inputStyles {
+    color: ui.get-color(accent, 100);
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+
+    &::placeholder {
+        color: ui.get-color(accent, 60)
+    }
+    
+    &:focus {
+        outline: none;
+        border: 2px solid ui.get-color(secondary, 60);
+    }
+}
+
+.input {
+    @include inputStyles;
+    border: 2px solid ui.get-color(accent, 15);
+}
+
+.errorInput {
+    @include inputStyles;
+    border: 2px solid ui.get-color(error, 60);
+}
+
+.error-message {
+    @include ui.font-style(loginFont, xs, semiBold);
+    color: ui.get-color(error, 100);
 }
