@@ -21,8 +21,21 @@
     box-shadow: ui.$headerShadow;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 3%;
     z-index: 10;
+
+    img {
+        height: 30%;
+    }
+
+    .header-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 17dvw;
+    }
 }
 
 .admin-nav {

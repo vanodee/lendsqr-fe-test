@@ -1,4 +1,8 @@
 import { Outlet } from "react-router";
+import Logo from '../assets/lendsqr_logo.png';
+import NotificationIcon from "../assets/icons/notification.svg?react";
+import Profile from '../components/Profile'
+import SearchBar from "../components/SearchBar";
 
 
 export default function AdminLayout() {
@@ -6,7 +10,15 @@ export default function AdminLayout() {
     <div className="admin-container">
       
       <div className="admin-header">
-        Header
+        <img src={Logo} alt="Lengsqr Logo" />
+
+        <SearchBar />
+
+        <div className="header-info">
+          <p className="docs">Docs</p>
+          <NotificationIcon />
+          <Profile />
+        </div>
       </div>
 
       <div className="admin-nav">
@@ -16,6 +28,7 @@ export default function AdminLayout() {
       <div className="admin-contentArea">
         <Outlet />
       </div>
+
     </div>
   )
 }
