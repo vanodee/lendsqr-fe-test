@@ -1,0 +1,93 @@
+@use "sass:map";
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// IMPORT FONTS
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Avenir Next (Local Import) 
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../assets/fonts/AvenirNext-Regular.woff2') format('woff2'),
+         url('../assets/fonts/AvenirNext-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../assets/fonts/AvenirNext-DemiBold.woff2') format('woff2'),
+         url('../assets/fonts/AvenirNext-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../assets/fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+         url('../assets/fonts/AvenirNextCyr-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Work Sans (Google Font Import)
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// FONT VARIABLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+$fontFamily:(
+    "loginFont": "Avenir Next",
+    "adminFont": "Work Sans"
+);
+
+$fontSizes:(
+    "xs": 12px,
+    "base": 14px,
+    "sm": 16px,
+    "md": 20px,
+    "lg": 24px,
+    "xl": 40px,
+);
+
+$fontWeights:(
+    "thin": 100,
+    "xlight": 200,
+    "light": 300,
+    "normal": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "xbold": 800,
+    "black": 900,
+);
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// MIXINS AND UTILITIES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Mixin for Font Styles
+@mixin font-style($family, $size, $weight) {
+    font-family: map.get($fontFamily, $family);
+    font-size: map.get($fontSizes, $size);
+    font-weight: map.get($fontWeights, $weight);
+}
+
+// Utility Classes for Font Styles
+@each $family-name, $family-value in $fontFamily {
+    @each $size-name, $size-value in $fontSizes {
+        @each $weight-name, $weight-value in $fontWeights {
+            .#{$family-name}-#{$size-name}-#{$weight-name} {
+                font-family: $family-value;
+                font-size: $size-value;
+                font-weight: $weight-value;
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@use "sass:map";
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// COLOR VARIABLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+$secondary: #39CDCC;
+
+$colors: (                      //These are the colors used in the figma file
+  "primary": #213F7D,
+  "secondary": #39CDCC,
+  "accent": #545F7D,
+  "success": #39CD62,
+  "error": #E4033B,
+  "info": #E9B200,
+  "grey": #FBFBFB,
+);
+
+$opacities: (                   //In the figma file, colors were varied using opacity
+  6: 0.06,
+  10: 0.10,
+  15: 0.15,
+  60: 0.60,
+  100: 1.00
+);
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// MIXINS AND UTILITIES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Function to generate Color variations at different Opacities
+@function get-color($color-name, $opacity-name) {
+  
+  $color: map.get($colors, $color-name);  // Retrieve the color value from the $colors map
+  $opacity: map.get($opacities, $opacity-name);   // Retrieve the opacity value from the $opacities map
+
+  @if $color == null {
+    @error "The color `#{$color-name}` does not exist in the colors map.";
+  }
+  @if $opacity == null {
+    @error "The opacity `#{$opacity-name}` does not exist in the opacities map.";
+  }
+
+  // Return the rgba string
+  @return rgba($color, $opacity);
+}
+
+
+
+// Utility Classes for Colors at various Opacities
+@each $color-name, $color-value in $colors {
+  @each $opacity-name, $opacity-value in $opacities {
+    
+    // Text Color Utility Classes
+    .color-#{$color-name}-#{$opacity-name} {
+      color: rgba($color-value, $opacity-value);
+    }
+
+    // Background Color Utility Classes
+    .bg-#{$color-name}-#{$opacity-name} {
+      background-color: rgba($color-value, $opacity-value);
+    }
+  }
+}
