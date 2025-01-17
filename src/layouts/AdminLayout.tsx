@@ -3,17 +3,19 @@ import { Outlet } from "react-router";
 
 export default function AdminLayout() {
   return (
-    <>
-        <div>Header</div>
+    <div className="admin-container">
+      
+      <div className="admin-header">
+        Header
+      </div>
 
-        <div>
-            <div>Sidebar</div>
+      <div className="admin-nav">
+        Navbar
+      </div>
             
-            <div>
-                <Outlet />
-            </div>
-        </div>
-        
-    </>
+      <div className="admin-contentArea">
+        <Outlet />
+      </div>
+    </div>
   )
 }

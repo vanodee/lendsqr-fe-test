@@ -16,18 +16,22 @@ import SingleUserPage from './pages/SingleUserPage';
 
 
 // localStorage.setItem("isAuthenticated", "false");
-const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";                                     // User authentication check
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={!isAuthenticated ? <LoginPage /> : <Navigate to="/Admin" replace />} />
+      <Route path='/' element={!isAuthenticated ? <LoginPage /> : <Navigate to="/Admin" replace />} />         
 
       <Route path='Admin' element={isAuthenticated ? <AdminLayout /> : <Navigate to="/" replace />}>
+        
+        <Route index element={<Navigate to="Users" replace />} />
+        
         <Route path='Users' element={<UsersPage />}>
           <Route path=':userInfo' element={<SingleUserPage />} />
         </Route>
+        
       </Route>
     </>
     

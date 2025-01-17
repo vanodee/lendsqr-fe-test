@@ -1,0 +1,46 @@
+@use '../_index' as ui;
+@use 'sass:map';
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// ADMIN DASHBOARD STYLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+.admin-container {
+    background-color: ui.get-color("grey", 100);
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-header {
+    position: fixed;
+    height: 12dvh;
+    width: 100dvw;
+    background-color: white;
+    box-shadow: ui.$headerShadow;
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    z-index: 10;
+}
+
+.admin-nav {
+    height: 100dvh;
+    width: 15dvw;
+    background-color: white;
+    box-shadow: ui.$navbarShadow;
+    padding-top: 15dvh;
+    z-index: 5;
+}
+
+.admin-contentArea {
+    height: 100dvh;
+    width: 85dvw;
+    padding-top: 20dvh;
+    display: flex;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow-y: scroll;
+}

@@ -1,7 +1,9 @@
 
 
 export default function SingleUserPage() {
-    return (
-      <div>SingleUserPage</div>
-    )
-  }
+  return (
+    <div className="singleUser-page">
+      Single User
+    </div>
+  )
+}

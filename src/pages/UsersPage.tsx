@@ -1,8 +1,24 @@
-
+import { Outlet, useLocation } from "react-router";
 
 export default function UsersPage() {
-    return (
-      <div>UsersPage</div>
-    )
+
+  // useLocation hook checks for routes nested under the Users Page
+  const location = useLocation();
+  const isOnSingleUser = location.pathname.includes("/Admin/Users/"); 
+
+
+  return (
+    <>
+      {/* Render Users content only when not on a nested route */}
+      {!isOnSingleUser && (
+        <div className="users-page">
+          Users
+        </div>
+      )}
+
+      {/* Render nested routes */}
+      <Outlet />
+    </>
+  )
   }
   
