@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 // ----------------------------------------------------------------------------------------------------------------------------
-// LOGIN PAGE STYLES
+// GENERAL LOGIN PAGE STYLES
 // ----------------------------------------------------------------------------------------------------------------------------
 
 .loginPage-container {
@@ -11,6 +11,11 @@
     background-color: white;
     display: flex;
     flex-direction: row;
+
+    @include ui.respond-to (base, portrait) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .loginPage-header {
@@ -18,12 +23,28 @@
     height: 5dvh;
     top: 8%;
     left: 5%;
+
+    @include ui.respond-to (base, portrait) {
+        top: 3%;
+        height: 3dvh;
+    }    
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .loginImage {
     width: 60dvw;
     object-fit: contain;
     padding: 0 10%;
+
+    @include ui.respond-to (base, portrait) {
+        width: 100dvw;
+        height: 40dvh;
+        padding: 10% 0;
+    }
 }
 
 .loginForm-container {
@@ -34,11 +55,25 @@
     align-items: center;
     justify-content: center;
 
+    @include ui.respond-to (base, portrait) {
+        width: 100dvw;
+        max-width: 720px;
+        height: 60dvh;
+    }
+    @include ui.respond-to (md, portrait) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
     form {
         width: 70%;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+
+        @include ui.respond-to (md, portrait) {
+            max-width: 500px;
+        }
 
         div {
             margin-bottom: 5%;
@@ -46,11 +81,25 @@
             h1 {
                 @include ui.font-style(loginFont, xl, bold);
                 color: ui.get-color(primary, 100);
+
+                @include ui.respond-to (base, landscape) {
+                    @include ui.font-style(loginFont, lg, bold);
+                }
+                @include ui.respond-to (lg, landscape) {
+                    @include ui.font-style(loginFont, xl, bold);
+                }
             }
 
             h2 {
                 @include ui.font-style(loginFont, md, normal);
                 color: ui.get-color(accent, 100);
+
+                @include ui.respond-to (base, landscape) {
+                    @include ui.font-style(loginFont, sm, normal);
+                }
+                @include ui.respond-to (lg, landscape) {
+                    @include ui.font-style(loginFont, md, normal);
+                }
             } 
         }
 
