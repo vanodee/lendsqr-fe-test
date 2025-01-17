@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// BREAKPOINTS 
+// ----------------------------------------------------------------------------------------------------------------------------
+
+$breakpoints: (
+    "base": 0px,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px,
+);
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// BREAKPOINT MIXINS (SCREEN SIZE & ORIENTATION)
+// ----------------------------------------------------------------------------------------------------------------------------
+
+@mixin respond-to($breakpoint, $orientation: all) {
+    $min-width: map.get($breakpoints, $breakpoint);
+  
+    @if $min-width == null {
+      @error "Invalid breakpoint: `#{$breakpoint}`. Please use one of: #{map.keys($breakpoints)}.";
+    }
+  
+    @media (min-width: $min-width) {
+      @if $orientation == "portrait" {
+        @media (orientation: portrait) {
+          @content;
+        }
+      } @else if $orientation == "landscape" {
+        @media (orientation: landscape) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  }
