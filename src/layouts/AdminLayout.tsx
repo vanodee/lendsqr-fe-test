@@ -1,9 +1,16 @@
+// REACT ROUTER IMPORTS
 import { Outlet } from "react-router";
+
+// IMAGE IMPORTS
 import Logo from '../assets/lendsqr_logo.png';
-import NotificationIcon from "../assets/icons/notification.svg?react";
+
+// COMPONENT IMPORTS
 import Profile from '../components/Profile'
 import SearchBar from "../components/SearchBar";
 import NavList from "../components/NavList";
+
+// ICON IMPORTS
+import NotificationIcon from "../assets/icons/notification.svg?react";
 
 
 export default function AdminLayout() {

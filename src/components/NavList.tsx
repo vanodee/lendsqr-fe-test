@@ -1,6 +1,7 @@
+// REACT ROUTER IMPORTS
 import { NavLink } from "react-router"
 
-// IMPORT ICONS
+// ICON IMPORTS
 import SwitchOrgIcon from '../assets/icons/switchOrg.svg?react'
 import DropdownIcon2 from '../assets/icons/dropdown2.svg?react'
 import DashboardIcon from '../assets/icons/dashboard.svg?react'
@@ -28,10 +29,14 @@ import LogOutIcon from '../assets/icons/logOut.svg?react'
 
 export default function NavList() {
 
-
+  // user logOut function
   const userLogout = ():void => {
-    localStorage.setItem("isAuthenticated", "false");          // Set authentication status to FALSE
-    window.location.reload();                                 // Reload the page, so react-router handles redirecting with new authentication status (see App.tsx)
+
+    // Set authentication status to FALSE & store variable in localStorage
+    localStorage.setItem("isAuthenticated", "false");       
+    
+    // Reload the page so that react-router gets the updated authentication status and redirects accordingly (see App.tsx)
+    window.location.reload();                                
   }
 
 
@@ -49,8 +54,9 @@ export default function NavList() {
         <p>Dashboard</p>
       </NavLink>
 
+
       {/* CUSTOMERS ------------------------------------------------------------------------------ */}
-      <h5 className="nav-category">CUSTOMERS</h5>
+      <h5>CUSTOMERS</h5>
 
       <NavLink to="users" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <UsersIcon />
@@ -92,8 +98,9 @@ export default function NavList() {
         <p>Karma</p>
       </NavLink>
 
+
       {/* BUSINESSES ------------------------------------------------------------------------------ */}
-      <h5 className="nav-category">BUSINESSES</h5>
+      <h5>BUSINESSES</h5>
 
       <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <SwitchOrgIcon />
@@ -140,8 +147,9 @@ export default function NavList() {
         <p>Reports</p>
       </NavLink>
 
+
       {/* SETTINGS ------------------------------------------------------------------------------ */}
-      <h5 className="nav-category">SETTINGS</h5>
+      <h5>SETTINGS</h5>
 
       <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <PreferencesIcon />

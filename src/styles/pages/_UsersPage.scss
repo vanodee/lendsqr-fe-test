@@ -1,11 +1,125 @@
 @use '../_index' as ui;
-@use 'sass:map';
 
 // ----------------------------------------------------------------------------------------------------------------------------
 // USERS PAGE STYLES
 // ----------------------------------------------------------------------------------------------------------------------------
 
 .users-page {
-    // background-color: blue;
     width: 100%;
+
+    h1 {
+        @include ui.font-style(adminFont, lg, medium);
+        color: ui.get-color(primary, 100);
+        margin-bottom: 4%;
+    }
+}
+
+.user-stats-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2%;
+    margin-bottom: 4%;
+}
+
+.user-stat-card {
+    grid-column: span 3;
+    box-shadow: ui.$cardShadow;
+    border-radius: 6px;
+    padding: 1.5dvw 0 1.5dvw 1.5dvw;
+
+
+    h2 {
+        @include ui.font-style(adminFont, base, medium);
+        color: ui.get-color(accent, 100);
+    }
+
+    p {
+        @include ui.font-style(adminFont, lg, semibold);
+        color: ui.get-color(primary, 100);
+    }
+}
+
+.user-data-table {
+    width: 100%;
+    box-shadow: ui.$cardShadow;
+    border-radius: 6px;
+    padding: 0 1.5dvw 0 1.5dvw;
+
+    table {
+        width: 100%;
+    }
+
+    tr {
+        width: 100%;
+        height: 4rem;
+    }
+
+    th {
+        @include ui.font-style(adminFont, xs, semibold);
+        color: ui.get-color(accent, 100);
+        text-align: left;
+
+        div {
+            display: flex;
+        }
+    }
+
+    td {
+        @include ui.font-style(adminFont, base, normal);
+        color: ui.get-color(accent, 100);
+        text-align: left;
+        border-bottom: 1px solid ui.get-color(primary, 10);
+    }
+}
+
+.filter-button {
+    display: inline-flex;
+    cursor: pointer;
+    padding-left: 0.5rem;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+@mixin user-status {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+}
+
+.user-status-Inactive{
+    @include user-status;
+    background-color: ui.get-color(accent, 6);
+    color: ui.get-color(accent, 100);
+}
+
+.user-status-Blacklisted{
+    @include user-status;
+    background-color: ui.get-color(error, 10);
+    color: ui.get-color(error, 100);
+}
+
+.user-status-Pending{
+    @include user-status;
+    background-color: ui.get-color(info, 10);
+    color: ui.get-color(info, 100);
+}
+
+.user-status-Active{
+    @include user-status;
+    background-color: ui.get-color(success, 6);
+    color: ui.get-color(success, 100);
+}
+
+.options-button {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: ui.get-color(accent, 6);
+    }
 }

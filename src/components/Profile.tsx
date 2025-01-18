@@ -1,5 +1,9 @@
+// IMAGE IMPORTS
 import Avatar from '../assets/avatar.png'
-import Dropdown from '../assets/icons/dropdown.svg?react'
+
+// ICON IMPORTS
+import DropdownIcon from '../assets/icons/dropdown.svg?react'
+
 
 export default function Profile() {
     return (
@@ -9,7 +13,7 @@ export default function Profile() {
 
             <p className="adminFont-base-medium color-primary-100">Adedeji</p>
 
-            <Dropdown />
+            <DropdownIcon />
 
         </div>
     )

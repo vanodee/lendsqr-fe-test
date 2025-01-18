@@ -77,31 +77,31 @@
 
         div {
             margin-bottom: 5%;
-
-            h1 {
-                @include ui.font-style(loginFont, xl, bold);
-                color: ui.get-color(primary, 100);
-
-                @include ui.respond-to (base, landscape) {
-                    @include ui.font-style(loginFont, lg, bold);
-                }
-                @include ui.respond-to (lg, landscape) {
-                    @include ui.font-style(loginFont, xl, bold);
-                }
-            }
-
-            h2 {
-                @include ui.font-style(loginFont, md, normal);
-                color: ui.get-color(accent, 100);
-
-                @include ui.respond-to (base, landscape) {
-                    @include ui.font-style(loginFont, sm, normal);
-                }
-                @include ui.respond-to (lg, landscape) {
-                    @include ui.font-style(loginFont, md, normal);
-                }
-            } 
         }
+
+        h1 {
+            @include ui.font-style(loginFont, xl, bold);
+            color: ui.get-color(primary, 100);
+
+            @include ui.respond-to (base, landscape) {
+                @include ui.font-style(loginFont, lg, bold);
+            }
+            @include ui.respond-to (lg, landscape) {
+                @include ui.font-style(loginFont, xl, bold);
+            }
+        }
+
+        h2 {
+            @include ui.font-style(loginFont, md, normal);
+            color: ui.get-color(accent, 100);
+
+            @include ui.respond-to (base, landscape) {
+                @include ui.font-style(loginFont, sm, normal);
+            }
+            @include ui.respond-to (lg, landscape) {
+                @include ui.font-style(loginFont, md, normal);
+            }
+        } 
 
         button {
             margin-top: 3%;
@@ -110,10 +110,7 @@
 }
 
 
-// ----------------------------------------------------------------------------------------------------------------------------
 // FORM INPUT FIELD STYLES
-// ----------------------------------------------------------------------------------------------------------------------------
-
 @mixin inputStyles {
     color: ui.get-color(accent, 100);
     border-radius: 5px;

@@ -1,6 +1,10 @@
 @use '../_index' as ui;
 @use 'sass:map';
 
+// ----------------------------------------------------------------------------------------------------------------------------
+// SEARCH BAR COMPONENT STYLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
 .search {
     display: flex;
     align-content: center;
@@ -23,17 +27,17 @@
             border: 2px solid ui.get-color(secondary, 60);
         }
     }
+}
 
-    .searchbutton {
-        position: absolute;
-        right: 0;
-        height: 100%;
-        width: 15%;
-        background-color: ui.get-color(secondary, 100);
-        border-radius: 0 8px 8px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
+.searchbutton {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 15%;
+    background-color: ui.get-color(secondary, 100);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }

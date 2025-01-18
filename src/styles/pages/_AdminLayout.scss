@@ -50,10 +50,9 @@
 .admin-contentArea {
     height: 100dvh;
     width: 80dvw;
-    padding-top: 20dvh;
+    padding: 20dvh 3dvw 20dvh 3dvw;
     display: flex;
     justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
