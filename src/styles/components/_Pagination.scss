@@ -1,0 +1,42 @@
+@use '../_index' as ui;
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// Filter Component styles
+// ----------------------------------------------------------------------------------------------------------------------------
+
+.pagination-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+}
+
+.items-per-page {
+    display: flex;
+    align-items: center;
+    @include ui.font-style(adminFont, base, normal);
+    color: ui.get-color(accent, 100);
+
+    select {
+        @include ui.font-style(adminFont, base, medium);
+        border-radius: 4px;
+        background-color: ui.get-color(primary, 10);
+        border: none;
+        outline: none;
+        padding: 0.25rem 0.5rem;
+        margin: 0 0.5rem;
+    }
+} 
+
+.page-navigation {
+    @extend .items-per-page;
+    color: ui.get-color(accent, 60);
+
+    p {
+        margin: 0 0.5rem;
+    }
+
+    span {
+        color: ui.get-color(accent, 100);
+    }
+}

@@ -1,0 +1,58 @@
+@use '../_index' as ui;
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// Filter Component styles
+// ----------------------------------------------------------------------------------------------------------------------------
+
+.filter-dropdown {
+    position: absolute;
+    box-shadow: ui.$cardShadow;
+    width: fit-content;
+    padding: 3% 2%;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+
+    label {
+        @include ui.font-style(adminFont, base, medium);
+        color: ui.get-color(accent, 100);
+        margin-bottom: 3%;
+    }
+
+    @mixin inputStyles {
+        border: 1px solid ui.get-color(primary, 20);
+        color: ui.get-color(accent, 100);
+        border-radius: 8px;
+        padding: 0.75rem;
+        outline: none;
+
+        &::placeholder {
+            color: ui.get-color(accent, 60)
+        }
+        
+        &:focus {
+            outline: none;
+            border: 1px solid ui.get-color(secondary, 60);
+        }
+    }
+
+    input {
+        @include inputStyles();
+    }
+
+    select {
+        @include inputStyles();
+    }
+}
+
+.filter-actions{
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8%;
+}
