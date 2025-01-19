@@ -14,11 +14,11 @@ import UsersPage from './pages/UsersPage';
 import SingleUserPage from './pages/SingleUserPage';
 
 // LOADER FUNCTION IMPORTS
-import { user_data_loader } from "./components/UserDataLoader";
+import { single_user_data_loader, user_data_loader } from "./components/UserDataLoader";
 
 
 // check localStorage for authentication status 
-const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";                                     // User authentication check
+const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";       // User authentication check
 
 
 // PROJECT ROUTES
@@ -26,15 +26,15 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* render the login page or admin page based on authentication status */}
-      <Route path='/' element={!isAuthenticated ? <LoginPage /> : <Navigate to="/Admin" replace />} />         
+      <Route path='/' element={!isAuthenticated ? <LoginPage /> : <Navigate to="/admin" replace />} />         
 
-      <Route path='Admin' element={isAuthenticated ? <AdminLayout /> : <Navigate to="/" replace />}>
+      <Route path='admin' element={isAuthenticated ? <AdminLayout /> : <Navigate to="/" replace />}>
         
         {/* redirect ./admin to ./admin/users */}
-        <Route index element={<Navigate to="Users" replace />} />
+        <Route index element={<Navigate to="users" />} />
         
-        <Route path='Users' element={<UsersPage />} loader={user_data_loader}>
-          <Route path=':userInfo' element={<SingleUserPage />} />
+        <Route path='users' element={<UsersPage />} loader={user_data_loader}>
+          <Route path=':customer_number' element={<SingleUserPage />} loader={single_user_data_loader} />
         </Route>
         
       </Route>

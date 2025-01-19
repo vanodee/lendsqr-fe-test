@@ -51,6 +51,7 @@
     @include navlinkStyles;
     border-left: 5px solid ui.get-color(secondary, 100);
     background-color: ui.get-color(secondary, 6);
+    cursor: default;
     opacity: 1;
 }
 

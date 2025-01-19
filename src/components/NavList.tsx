@@ -58,7 +58,7 @@ export default function NavList() {
       {/* CUSTOMERS ------------------------------------------------------------------------------ */}
       <h5>CUSTOMERS</h5>
 
-      <NavLink to="users" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="users" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'}>
         <UsersIcon />
         <p>Users</p>
       </NavLink>

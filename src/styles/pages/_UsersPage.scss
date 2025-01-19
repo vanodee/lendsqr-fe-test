@@ -84,6 +84,12 @@
     }
 }
 
+.user-name-link {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 @mixin user-status {
     width: max-content;
     padding: 0.5rem 1rem;

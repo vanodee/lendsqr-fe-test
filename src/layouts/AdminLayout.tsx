@@ -1,5 +1,5 @@
 // REACT ROUTER IMPORTS
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 
 // IMAGE IMPORTS
 import Logo from '../assets/lendsqr_logo.png';
@@ -17,25 +17,27 @@ export default function AdminLayout() {
   return (
     <div className="admin-container">
       
-      <div className="admin-header">
-        <img src={Logo} alt="Lengsqr Logo" />
-
+      <header className="admin-header">
+        <Link to='/'>
+          <img src={Logo} alt="Lengsqr Logo" />
+        </Link>
+        
         <SearchBar />
 
         <div className="header-info">
-          <p className="docs">Docs</p>
+          <p className="adminFont-sm-normal">Docs</p>
           <NotificationIcon />
           <Profile />
         </div>
-      </div>
+      </header>
 
-      <div className="admin-nav">
+      <aside className="admin-nav">
         <NavList />
-      </div>
+      </aside>
             
-      <div className="admin-contentArea">
+      <main className="admin-contentArea">
         <Outlet />
-      </div>
+      </main>
 
     </div>
   )

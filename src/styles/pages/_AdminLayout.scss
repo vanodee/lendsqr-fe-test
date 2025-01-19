@@ -1,5 +1,4 @@
 @use '../_index' as ui;
-@use 'sass:map';
 
 // ----------------------------------------------------------------------------------------------------------------------------
 // ADMIN DASHBOARD STYLES
@@ -28,13 +27,17 @@
     img {
         height: 35%;
     }
+}
 
-    .header-info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 17dvw;
+.header-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 17dvw;
+
+    p {
+        color: ui.get-color(primary, 100);
     }
 }
 
@@ -53,6 +56,7 @@
     padding: 20dvh 3dvw 20dvh 3dvw;
     display: flex;
     justify-content: center;
+    align-items: start;
     overflow-y: scroll;
     scrollbar-width: none;
 }

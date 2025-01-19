@@ -1,5 +1,5 @@
 // REACT ROUTER IMPORTS
-import { Outlet, useLocation, useLoaderData } from "react-router";
+import { Outlet, useLoaderData, Link } from "react-router";
 
 // ICON IMPORTS
 import UserCardIcon from '../assets/icons/userCardIcon.svg?react'
@@ -7,6 +7,9 @@ import ActiveUserCardIcon from '../assets/icons/activeUserCardIcon.svg?react'
 import LoanUserCardIcon from '../assets/icons/loanUserCardIcon.svg?react'
 import SavingsUserCardIcon from '../assets/icons/savingsUserCardIcon.svg?react'
 import FilterIcon from '../assets/icons/filterIcon.svg?react'
+
+// PATH-INFO HOOK IMPORT (see PathInfo.tsx)
+import usePathInfo from "../components/PathInfo";
 
 // INTERFACE IMPORT FOR LOADER FUNCTION (see UserDataLoader.tsx)
 import { UserData } from '../components/UserDataLoader'
@@ -25,18 +28,16 @@ const userTableHeaders: string[] = [
 
 export default function UsersPage() {
 
-  // useLocation hook checks if we are on a SingleUser route
-  const location = useLocation();
-  const isOnSingleUser = location.pathname.includes("/Admin/Users/"); 
-
-  // JSON data from loader function is stored with type of UserData
+  // currentPath stores the current route we are on
+  const { currentPath } = usePathInfo();
+  
   const users = useLoaderData() as UserData[];
 
 
   return (
     <>
-      {/* Render UsersPage content, if current route is NOT a SingleUser route */}
-      {!isOnSingleUser && (
+      {/* Only render the Users page if the current route is ./admin/users */}
+      {currentPath == "users" && (
         <div className="users-page">
           
           <h1>Users</h1>
@@ -98,7 +99,14 @@ export default function UsersPage() {
                 {users.map((user) => (
                   <tr key={user.id}>
                     <td>{user.organization}</td>
-                    <td>{user.personal_information.full_name}</td>
+
+                    <td>
+                      {/* link to view users details */}
+                      <Link to={user.customer_number} className="user-name-link">
+                        {user.personal_information.full_name}
+                      </Link>
+                    </td>
+
                     <td>{user.personal_information.email_address}</td>
                     <td>{user.personal_information.phone_number}</td>
                     <td>{user.date_joined}</td>
