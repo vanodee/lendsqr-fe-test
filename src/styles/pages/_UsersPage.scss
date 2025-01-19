@@ -120,13 +120,3 @@
     background-color: ui.get-color(success, 6);
     color: ui.get-color(success, 100);
 }
-
-.options-button {
-    padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
-    transition: 0.3s;
-
-    &:hover {
-        background-color: ui.get-color(accent, 6);
-    }
-}

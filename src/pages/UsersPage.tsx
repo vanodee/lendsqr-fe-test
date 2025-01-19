@@ -23,6 +23,9 @@ import Pagination from "../components/Pagination";
 // FILTER COMPONENT IMPORT (see FilterDropdown.tsx)
 import FilterDropdown, { FilterField } from "../components/FilterDropdown";
 
+// USER OPTIONS COMPONENT IMPORT (see UserOptionsDropdown)
+import UserOptionsDropdown from "../components/UserOptionsDropdown";
+
 
 
 
@@ -193,7 +196,8 @@ export default function UsersPage() {
                     </td>
 
                     <td>
-                      <button className="options-button">⋮</button>
+                      {/* <button className="options-button">⋮</button> */}
+                      <UserOptionsDropdown customerNumber={user.customer_number} />
                     </td>
                   </tr>
                 ))}

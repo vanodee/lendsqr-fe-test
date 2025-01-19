@@ -1,0 +1,49 @@
+@use '../_index' as ui;
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// USER OPTIONS DROPDOWN STYLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    transition: 1s;
+}
+
+.options-button {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+
+    &:hover {
+        background-color: ui.get-color(accent, 6);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: fit-content;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: ui.$cardShadow;
+    padding: 0.5rem 2rem;
+    z-index: 1000;
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0;
+    transition: 0.3s;
+
+    p {
+        @include ui.font-style(adminFont, base, medium);
+        color: ui.get-color(accent, 100);
+        margin-left: 0.7rem;
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
