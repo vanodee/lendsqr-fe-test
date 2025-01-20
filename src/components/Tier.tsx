@@ -1,6 +1,3 @@
-// REACT IMPORTS
-import React from "react";
-
 // ICON IMPORTS
 import FilledStarIcon from "../assets/icons/starFilled.svg?react";
 import OutlineStarIcon from "../assets/icons/starOutlined.svg?react";

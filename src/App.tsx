@@ -24,7 +24,7 @@ import { single_user_data_loader, user_data_loader } from "./components/UserData
 const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";       // User authentication check
 
 // List of undeveloped pages
-const demoPages: string[] = [
+export const demoPages: string[] = [
   "dashboard",
   "guarantors",
   "loans",
