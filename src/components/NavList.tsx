@@ -49,7 +49,7 @@ export default function NavList() {
         <DropdownIcon2 />
       </div>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="dashboard" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <DashboardIcon />
         <p>Dashboard</p>
       </NavLink>
@@ -63,37 +63,37 @@ export default function NavList() {
         <p>Users</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="guarantors" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <GuarantorsIcon />
         <p>Guarantors</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="loans" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <LoansIcon />
         <p>Loans</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="decision_models" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <DecisionIcon />
         <p>Decision Models</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="savings" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <SavingsIcon />
         <p>Savings</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="loan_requests" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <LoanRequestIcon />
         <p>Loan Requests</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="whitelist" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <WhitelistIcon />
         <p>Whitelist</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="karma" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <KarmaIcon />
         <p>Karma</p>
       </NavLink>
@@ -102,47 +102,47 @@ export default function NavList() {
       {/* BUSINESSES ------------------------------------------------------------------------------ */}
       <h5>BUSINESSES</h5>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="organization" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <SwitchOrgIcon />
         <p>Organization</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="loan_products" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <LoanRequestIcon />
         <p>Loan Products</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="savings_products" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <SavingsPoductIcon />
         <p>Savings Products</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="fees_charges" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <FeesIcon />
         <p>Fees and Charges</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="transactions" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <TransactionsIcon />
         <p>Transactions</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="services" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <ServicesIcon />
         <p>Services</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="service_account" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <ServiceAccountIcon />
         <p>Service Account</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="settlements" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <SettlementsIcon />
         <p>Settlements</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="reports" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <ReportsIcon />
         <p>Reports</p>
       </NavLink>
@@ -151,22 +151,22 @@ export default function NavList() {
       {/* SETTINGS ------------------------------------------------------------------------------ */}
       <h5>SETTINGS</h5>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="preferences" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <PreferencesIcon />
         <p>Preferences</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="fees_pricing" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <FeesPriceIcon />
         <p>Fees and Pricing</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="audit_logs" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <AuditLogIcon />
         <p>Audit Logs</p>
       </NavLink>
 
-      <NavLink to="" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
+      <NavLink to="system_messages" className={({ isActive }) => isActive ? 'active-navlink' : 'navlink'} end>
         <ReportsIcon />
         <p>System Messages</p>
       </NavLink>
