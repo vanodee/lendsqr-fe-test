@@ -11,9 +11,9 @@ export default function Profile() {
 
             <img src={Avatar} alt="Avatar" />
 
-            <p className="adminFont-base-medium color-primary-100">Adedeji</p>
+            <p className="adminFont-base-medium">Adedeji</p>
 
-            <DropdownIcon />
+            <DropdownIcon className='icon' />
 
         </div>
     )

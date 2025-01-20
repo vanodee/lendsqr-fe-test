@@ -8,13 +8,39 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    width: 10dvw;
+    justify-content: end;
+    height: 100%;
+    width: 50%;
     cursor: pointer;
 
     img {
-        object-fit: contain;
-        width: 35%;
-        padding-right: 10%; 
+        object-fit: cover;
+        height: 60%;
+
+        @include ui.respond-to (base, portrait) {
+            height: 50%;
+        }
+    }
+
+    p {
+        margin-left: 5%;
+
+        @include ui.respond-to (base) {
+            display: none;
+        }
+
+        @include ui.respond-to (lg) {
+            display: flex;
+        }
+    }
+
+    .icon {
+        @include ui.respond-to (base) {
+            display: none;
+        }
+
+        @include ui.respond-to (lg) {
+            display: flex;
+        }
     }
 }

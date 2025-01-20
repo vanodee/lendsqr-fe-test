@@ -9,13 +9,22 @@
     align-content: center;
     border: none;
     position: relative;
-    right: 13%;
+    height: 60%;
+
+    @include ui.respond-to(base){
+        display: none;
+    }
+
+
+    @include ui.respond-to(lg){
+        display: flex;
+    }
 
     input {
         border: 2px solid ui.get-color(primary, 20);
         color: ui.get-color("accent", 70);
         border-radius: 8px;
-        padding: 0.75rem 1rem;
+        padding: 0 1rem;
         width: 25dvw;
 
         &::placeholder {

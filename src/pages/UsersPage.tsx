@@ -112,26 +112,35 @@ export default function UsersPage() {
 
             <div className="user-stat-card">
               <UserCardIcon />
-              <h2>USERS</h2>
-              <p>{users.length}</p>
+              <div>
+                <h2>USERS</h2>
+                <p>{users.length}</p>
+              </div>
             </div>
 
             <div className="user-stat-card">
               <ActiveUserCardIcon />
-              <h2>ACTIVE USERS</h2>
-              <p>{users.filter(user => user.status === "Active").length}</p>
+              <div>
+                <h2>ACTIVE USERS</h2>
+                <p>{users.filter(user => user.status === "Active").length}</p>
+              </div>
             </div>
 
             <div className="user-stat-card">
               <LoanUserCardIcon />
-              <h2>USERS WITH LOANS</h2>
-              <p>335</p>
+              <div>
+                <h2>USERS WITH LOANS</h2>
+                <p>335</p>
+              </div>
+              
             </div>
 
             <div className="user-stat-card">
               <SavingsUserCardIcon />
-              <h2>USERS WITH SAVINGS</h2>
-              <p>253</p>
+              <div>
+                <h2>USERS WITH SAVINGS</h2>
+                <p>253</p>
+              </div>
             </div>
 
           </div>

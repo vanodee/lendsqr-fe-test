@@ -7,8 +7,18 @@
 .pagination-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding-top: 2%;
+    padding-top: 40px;
+
+    @include ui.respond-to (base) {
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+
+    @include ui.respond-to (md) {
+        flex-direction: row;
+        justify-content: space-between;
+        height: fit-content;
+    }
 }
 
 .items-per-page {
@@ -38,5 +48,13 @@
 
     span {
         color: ui.get-color(accent, 100);
+    }
+
+    @include ui.respond-to (base) {
+        margin-bottom: 20px;
+    }
+
+    @include ui.respond-to (md) {
+        margin-bottom: 0;
     }
 }

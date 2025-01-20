@@ -1,0 +1,155 @@
+@use '../_index' as ui;
+
+// ----------------------------------------------------------------------------------------------------------------------------
+// ADMIN DASHBOARD STYLES
+// ----------------------------------------------------------------------------------------------------------------------------
+
+.admin-container {
+    background-color: ui.get-color("grey", 100);
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.admin-header {
+    position: fixed;
+    height: 70px;
+    width: 100dvw;
+    background-color: white;
+    box-shadow: ui.$headerShadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3dvw;
+    z-index: 10;
+
+    @include ui.respond-to (base, portrait) {
+        padding: 0 5dvw;
+    }
+}
+
+.logo-and-hamburger {
+    display: flex;
+    align-items: center;
+    height: 45%;
+
+    @include ui.respond-to (base, portrait) {
+        height: 35%;
+    }
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    button {
+        margin-right: 10%;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        @include ui.respond-to (xl) {
+            display: none;
+        }
+    }
+}
+
+.header-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 18rem;
+    height: 100%;
+    color: ui.get-color(primary, 100);
+
+    @include ui.respond-to (base) {
+        width: 45%;
+    }
+
+    @include ui.respond-to (sm) {
+        width: 25%;
+    }
+
+    @include ui.respond-to (xl) {
+        width: 17%;
+    }
+}
+
+.notifications {
+    @extend .header-info;
+    justify-content: center;
+    width: 50%;
+
+    @include ui.respond-to (base) {
+        display: none;
+    }
+
+    @include ui.respond-to (lg) {
+        display: flex;
+    }
+
+    p {
+        text-decoration: underline;
+        padding-right: 25%;
+    }
+}
+
+@mixin adminNavBehaviour {
+    height: 100%;
+    width: 20dvw;
+    min-width: 290px;
+    max-width: 350px;
+    flex-shrink: 0;
+    background-color: white;
+    box-shadow: ui.$navbarShadow;
+    padding-top: 70px;
+    z-index: 5;
+    transition: transform 0.3s ease-in-out;
+}
+
+.admin-nav {
+    @include adminNavBehaviour();
+
+    @include ui.respond-to (base) {
+        position: absolute;
+        transform: translateX(-100%);
+    }
+
+    @include ui.respond-to (xl) {
+        position: relative;
+        transform: translateX(0);
+    }
+}
+
+.admin-hamburger {
+    @include adminNavBehaviour();
+
+    @include ui.respond-to (base) {
+        position: absolute;
+        transform: translateX(0);
+    }
+
+    @include ui.respond-to (xl) {
+        position: relative;
+        transform: translateX(0);
+    }
+}
+
+.admin-contentArea {
+    height: 100%;
+    flex: 1;
+    padding: 70px 3dvw 0 3dvw;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    @include ui.respond-to (base, portrait) {
+        padding: 70px 5dvw 0 5dvw;
+    }
+}

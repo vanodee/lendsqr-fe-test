@@ -7,6 +7,7 @@
 .nav-list {
     width: 100%;
     height: 100%;
+    padding-top: 30px;
     overflow-y: scroll;
     scrollbar-width: none;
 
@@ -15,6 +16,10 @@
         color: ui.get-color(accent, 100);
         padding: 3% 0 3% 3dvw;
         margin-top: 8%;
+
+        @include ui.respond-to (base, portrait) {
+            padding: 3% 0 3% 5dvw;
+        }
     }
 
     hr {
@@ -34,6 +39,10 @@
     p {
         @include ui.font-style(adminFont, sm, normal);
         color: ui.get-color(primary, 100);
+    }
+
+    @include ui.respond-to (base, portrait) {
+        padding: 3% 0 3% 5dvw;
     }
 }
 
