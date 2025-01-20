@@ -149,16 +149,6 @@ export default function UsersPage() {
           {/* USER DATA TABLE ----------------------------------------------------- */}
           <div className="user-data-table">
             <table>
-
-              {/* Render the FilterDropdown component */}
-              {activeDropdown && (
-                <FilterDropdown
-                  fields={filterFields}
-                  onFilterChange={handleFiltersChange}
-                  onResetFilters={resetFilters}
-                />
-              )}
-
               <thead>
 
                 <tr>
@@ -170,8 +160,17 @@ export default function UsersPage() {
 
                         {field.header}
 
-                        <div className="filter-button"  onClick={() => setActiveDropdown(activeDropdown ? null : field.value)}>
-                          <FilterIcon />
+                        <div className="filter-dropdown-container">
+                          <FilterIcon className="icon" onClick={() => setActiveDropdown(activeDropdown != field.value ? field.value : null)}/>
+
+                          {/* Render the FilterDropdown component */}
+                          {activeDropdown == field.value && (
+                          <FilterDropdown
+                            fields={filterFields}
+                            onFilterChange={handleFiltersChange}
+                            onResetFilters={resetFilters}
+                          />
+                        )}
                         </div>
 
                       </div>

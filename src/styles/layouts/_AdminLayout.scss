@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 3dvw;
-    z-index: 10;
+    z-index: 100;
 
     @include ui.respond-to (base, portrait) {
         padding: 0 5dvw;

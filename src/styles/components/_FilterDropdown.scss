@@ -6,11 +6,17 @@
 
 .filter-dropdown {
     position: absolute;
+    top: 150%;
+    right: 0%;
+    transform: translate(55%, 0);
     box-shadow: ui.$cardShadow;
-    width: fit-content;
-    padding: 3% 2%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
     border-radius: 6px;
     background-color: white;
+    z-index: 70;
 }
 
 .filter-field {
@@ -51,8 +57,8 @@
 }
 
 .filter-actions{
-    width: 210px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 8%;
+    margin-top: 10px;
 }
